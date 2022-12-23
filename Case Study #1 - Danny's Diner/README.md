@@ -19,4 +19,4 @@ Three datasets are used for this case study
 
 # Entity Relationship Diagram
 
-
+![ERD](https://user-images.githubusercontent.com/88558602/209400290-9a462b61-b211-4b44-b0d2-6820a313b31c.jpg)
