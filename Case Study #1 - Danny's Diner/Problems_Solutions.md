@@ -195,26 +195,24 @@ CUSTOMER_ID|TOTAL_POINTS|
 B          |        940 |
 A          |        860 |
 
-#### 10: In the first week after a customer joins the program 
-#### (including their join date) they earn 2x points on all items, not just sushi 
-#### how many points do customer A and B have at the end of January?
+#### 10: In the first week after a customer joins the program (including their join date) they earn 2x points on all items, not just sushi how many points do customer A and B have at the end of January?
 
 ```sql
 SELECT 
-	S.CUSTOMER_ID,
-	SUM(CASE WHEN S.ORDER_DATE < M.JOIN_DATE
-			THEN 
-				CASE WHEN S.PRODUCT_ID = 1 THEN PRICE * 20
-	   				ELSE PRICE * 10
-		END
+ S.CUSTOMER_ID,
+ SUM(CASE WHEN S.ORDER_DATE < M.JOIN_DATE
+	THEN 
+	  CASE WHEN S.PRODUCT_ID = 1 THEN PRICE * 20
+	    ELSE PRICE * 10
+	END
 	    WHEN S.ORDER_DATE > (M.JOIN_DATE + 6)
-			THEN 
-				CASE WHEN S.PRODUCT_ID = 1 THEN PRICE * 20
-	   				ELSE PRICE * 10
-				END 
-		ELSE PRICE * 20
-		END)
-		AS POINTS
+		THEN 
+		  CASE WHEN S.PRODUCT_ID = 1 THEN PRICE * 20
+	   		ELSE PRICE * 10
+	END 
+	 ELSE PRICE * 20
+	  END) 
+	   AS POINTS
 FROM MEMBERS M 
 INNER JOIN SALES S ON S.CUSTOMER_ID = M.CUSTOMER_ID
 INNER JOIN MENU ME ON ME.PRODUCT_ID = S.PRODUCT_ID
