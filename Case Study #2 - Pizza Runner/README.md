@@ -1,5 +1,5 @@
 # 🍕 Case Study #2- Pizza Runner
-![Pizza Runner](https://github.com/dareyup/8-Week-SQL-Challenge/assets/88558602/f8f355ec-01eb-4b16-9540-538888a86056)
+![Pizzuh R](https://github.com/dareyup/8-Week-SQL-Challenge/assets/88558602/fe3a5c03-8f7e-4adb-bc0b-d19af0cee43f)
 
 
 # Problem Statement
